@@ -1,0 +1,580 @@
+/* 
+    Landing Page for Big Solutions Corporation 
+    Created by: Carlos Villa 
+    Date: 02 July 2024
+*/
+
+/* landing/static/landing/styles.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: rgba(0, 123, 255, 0.6); /* Set a background color to match the site */
+}
+
+header {
+    position: fixed;
+    top: -100px; /* Start above the viewport */
+    left: 0;
+    width: 100%;
+    background: rgba(51, 51, 51, 0.9); /* Set an initial background color */
+    padding: 1em 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    animation: slideDown 1s ease-in-out forwards; /* Slide-down animation */
+}
+
+.navbar {
+    display: flex;
+    justify-content: center; /* Center align the entire navbar content */
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: white;
+    gap: 1em; /* Add gap to evenly space out the elements */
+}
+
+.nav-logo {
+    font-size: 1.5em;
+    color: white;
+    text-decoration: none;
+    margin-right: 1em; /* Adjust margin to control spacing */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1em; /* Reduce gap between links */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #00C6FF;
+}
+
+.call-us {
+    padding: 0.75em 1.5em;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 1.2em; /* Make the button larger */
+    margin-left: 1em; /* Adjust margin to control spacing */
+}
+
+.call-us:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+main {
+    padding-top: 80px; /* To avoid content being hidden behind the fixed navbar */
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.hero {
+    position: relative;
+    color: white;
+    text-align: center;
+    padding: 5em 1em;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: zoomIn 5s ease forwards, zoomPan 30s infinite; /* Add zoom-in animation and zoomPan effect */
+}
+
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 123, 255, 0.6); /* Transparent blue overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: -20px; /* Adjust this value to move up the content */
+}
+
+.hero h1 {
+    font-size: 5em;
+    margin: 0;
+    animation: fadeInDown 1s ease-out, shine 2s ease-in-out 1s forwards;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px; /* Reduce the margin to keep h1 close to subtitle */
+}
+
+.subtitle {
+    font-size: 2em;
+    margin: 0.5em 0 0; /* Remove extra margin-bottom to keep close to h1 */
+    animation: fadeInUp 1s ease-out;
+}
+
+.gallery {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.image-wrapper {
+    flex: 1;
+    height: 100vh; /* This ensures the height occupies the full section height */
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease; /* Add transition for hover effect */
+}
+
+.image-wrapper:hover {
+    transform: scale(1.05); /* Zoom-in effect on hover */
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%; /* Ensure the image covers the entire height */
+    object-fit: cover;
+}
+
+/* Services Section */
+
+.services {
+    background: white;
+    padding: 4em 1em;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.services h3 {
+    font-size: 2.5em;
+    margin-bottom: 1.5em;
+    color: #007BFF;
+    position: relative;
+    z-index: 2;
+}
+
+.services h3::after {
+    content: '';
+    width: 50px;
+    height: 4px;
+    background: #00C6FF;
+    display: block;
+    margin: 0.5em auto 0;
+    border-radius: 2px;
+    z-index: 2;
+}
+
+.services-content {
+    max-width: 800px;
+    margin: 0 auto 50px; /* Add margin-bottom to avoid overlap with the bottom shape */
+    text-align: left;
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(to right, #f9f9f9, #e6e6e6, #f9f9f9);
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.services-content p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+}
+
+.services-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.services-content li {
+    margin-bottom: 1em;
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.services-content li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.services-content li strong {
+    color: #007BFF;
+    margin-right: 0.5em;
+}
+
+.services-content li::before {
+    content: '\f0eb'; /* FontAwesome icon for services */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: #007BFF;
+    margin-right: 0.5em;
+    font-size: 1.5em;
+    transition: transform 0.3s ease;
+}
+
+.services-content li:hover::before {
+    transform: scale(1.2);
+}
+
+.shape-top,
+.shape-bottom {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(135deg, #007BFF 25%, #00C6FF 100%);
+    z-index: 1;
+    left: 0; /* Ensure it starts from the left edge */
+}
+
+.shape-top {
+    top: -20px; /* Adjust to make it visible */
+}
+
+.shape-bottom {
+    bottom: -30px; /* Adjust to make it visible */
+}
+
+.contact {
+    background: linear-gradient(to right, #f4f4f4, #e0e0e0);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2em;
+}
+
+.contact h3 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    animation: fadeInDown 1s ease-out;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.contact-item i {
+    font-size: 1.5em;
+    margin-right: 0.5em;
+    color: #007BFF;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    background: white;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s ease-out;
+}
+
+label {
+    margin-bottom: 0.5em;
+    align-self: flex-start;
+    font-weight: bold;
+}
+
+input, textarea {
+    margin-bottom: 1em;
+    padding: 0.75em;
+    font-size: 1em;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+button {
+    padding: 0.75em 1.5em;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+@keyframes slideDown {
+    from {
+        top: -100px; /* Start above the viewport */
+    }
+    to {
+        top: 0; /* End at the top of the viewport */
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(1.2);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes shine {
+    0% {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 0);
+    }
+    50% {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 1);
+    }
+    100% {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 0);
+    }
+}
+
+/* Keyframes for zooming and panning effect */
+@keyframes zoomPan {
+    0% {
+        background-size: 100%;
+        background-position: center center;
+    }
+    50% {
+        background-size: 105%;
+        background-position: center top;
+    }
+    100% {
+        background-size: 100%;
+        background-position: center center;
+    }
+}
+
+/* Apply the zoomPan animation to the hero section */
+.hero {
+    position: relative;
+    color: white;
+    text-align: center;
+    padding: 5em 1em;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: zoomIn 5s ease forwards, zoomPan 30s infinite; /* Add zoom-in animation and zoomPan effect */
+}
+
+/* Media Queries for Responsiveness */
+
+/* Extra small devices (phones, etc.) */
+@media (max-width: 480px) {
+
+    /* General Adjustments */
+    body {
+        overflow-x: hidden; /* Prevent horizontal scroll */
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 0.5em;
+    }
+
+    .nav-logo {
+        margin-right: 0;
+    }
+
+    .call-us {
+        margin-left: 0;
+    }
+
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .subtitle {
+        font-size: 1.2em;
+    }
+
+    /* Home Section */
+    .hero {
+        height: 60vh; /* Adjust height for mobile */
+    }
+
+    .image-wrapper {
+        height: 40vh; /* Further adjust image height for very small screens */
+    }
+
+    /* Gallery Section */
+    .gallery {
+        flex-direction: column; /* Stack images in rows */
+    }
+
+    .image-wrapper {
+        width: 100%; /* Make each image take full width */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .image-wrapper img {
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    /* Services Section */
+    .services-content {
+        padding: 0.5em;
+    }
+
+    /* Adjust shape positions to avoid overlap */
+    .shape-top {
+        top: -50px; /* Move shape-top further up to avoid overlap */
+    }
+
+    .shape-bottom {
+        bottom: -50px; /* Move shape-bottom further down if needed */
+    }
+
+    /* Contact Section */
+    .contact h3 {
+        font-size: 1.5em;
+    }
+
+    .contact-info i {
+        font-size: 1em;
+    }
+
+    form {
+        padding: 0.5em;
+    }
+
+    .call-us {
+        padding: 0.5em;
+        font-size: 0.9em;
+    }
+}
+
+/* Additional Adjustments for Background and Border Issues */
+
+/* Home Section */
+@media (max-width: 480px) {
+    .hero {
+        position: relative;
+        color: white;
+        text-align: center;
+        padding: 5em 1em;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        animation: zoomIn 5s ease forwards, zoomPan 30s infinite; /* Add zoom-in animation and zoomPan effect */
+        background-size: cover !important; /* Ensure background covers entire area */
+        background-position: center center !important; /* Center background */
+    }
+
+    body {
+        overflow-x: hidden; /* Prevent horizontal scroll */
+    }
+
+    /* Ensure all elements fit within the viewport width */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    html, body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* Fix for the gallery section */
+    .gallery {
+        width: 100%;
+    }
+
+    .image-wrapper {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Fix for the services section */
+    .services {
+        width: 100%;
+    }
+
+    /* Fix for the contact section */
+    .contact {
+        width: 100%;
+    }
+}

@@ -1,0 +1,82 @@
+<!-- 
+    Landing Page for Big Solutions Corporation 
+    Created by: Carlos Villa
+    Date: 02 July 2024
+-->
+
+<!-- landing/templates/landing/index.html -->
+
+{% extends 'landing/base.html' %}
+{% load static %}
+{% block content %}
+<section id="home" class="hero" style="background: url('{% static 'landing/images/joel-filipe-jU9VAZDGMzs-unsplash.jpg' %}') no-repeat center center/cover;">
+    <div class="overlay">
+        <h1>Big Solutions Corporation</h1>
+        <p class="subtitle">Experts in Waterproofing</p>
+    </div>
+</section>
+<section id="gallery" class="gallery">
+    <div class="image-wrapper rectangle">
+        <img src="{% static 'landing/images/nuno-silva-Rcsa_Rg77Tc-unsplash.jpg' %}" alt="Three men cleaning a window">
+    </div>
+    <div class="image-wrapper rectangle">
+        <img src="{% static 'landing/images/ricardo-gomez-angel-HXBP4Nud8PQ-unsplash.jpg' %}" alt="Roofing and waterproofing of a roof">
+    </div>
+    <div class="image-wrapper rectangle">
+        <img src="{% static 'landing/images/danny-sunderman-MjEGdBSRA-M-unsplash.jpg' %}" alt="A man in an elevator scaffolding">
+    </div>
+</section>
+<section id="services" class="services">
+    <div class="shape-top"></div>
+    <h3>Our Services</h3>
+    <div class="services-content">
+        <p>
+            At Big Solutions Corporation, we specialize in providing top-notch waterproofing services for high-rise buildings. 
+            Our team of experts is equipped with the latest tools and techniques to ensure that your building remains 
+            protected from water damage, whether it's through window waterproofing, roofing solutions, or complete building 
+            waterproofing.
+        </p>
+        <p>
+            Our services include:
+            <ul>
+                <li><strong>Window Waterproofing:</strong> We ensure that all windows are sealed properly to prevent water leakage and damage.</li>
+                <li><strong>Roof Waterproofing:</strong> Our roofing solutions provide an additional layer of protection to your building, ensuring longevity and durability.</li>
+                <li><strong>Complete Building Waterproofing:</strong> We offer comprehensive waterproofing solutions for the entire building, safeguarding it against water infiltration and structural damage.</li>
+                <li><strong>Maintenance and Repairs:</strong> Our team is always ready to provide maintenance services and repairs to ensure that your waterproofing systems are functioning optimally.</li>
+            </ul>
+        </p>
+        <p>
+            With years of experience and a commitment to excellence, Big Solutions Corporation is your go-to choice for all your 
+            waterproofing needs. Contact us today to learn more about how we can help protect your building from water damage.
+        </p>
+    </div>
+    <div class="shape-bottom"></div>
+</section>
+<section id="contact" class="contact">
+    <h3>Contact Us</h3>
+    <div class="contact-info">
+        <div class="contact-item">
+            <i class="fas fa-phone-alt"></i>
+            <span>+1 234 567 890</span>
+        </div>
+        <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <span>info@bigsolutionscorp.com</span>
+        </div>
+        <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>123 Main St, Anytown, USA</span>
+        </div>
+    </div>
+    <form method="post" action="">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <label for="message">Message:</label>
+        <textarea id="message" name="message"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+</section>
+{% endblock %}

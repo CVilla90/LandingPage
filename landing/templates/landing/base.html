@@ -1,0 +1,40 @@
+<!-- landing/templates/landing/base.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Solutions Corporation</title>
+    <link rel="stylesheet" href="{% static 'landing/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script defer src="{% static 'landing/scripts.js' %}"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="#home" class="nav-logo"><i class="fas fa-home"></i></a>
+            <ul class="nav-links">
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="tel:+1234567890" class="call-us">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24px" height="24px">
+                    <path d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M6.62 10.79a15.091 15.091 0 006.59 6.59l2.2-2.2a1.496 1.496 0 011.71-.31c.93.37 1.96.57 3.01.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.05.2 2.08.57 3.01.18.45.06.96-.31 1.31l-2.2 2.2z"/>
+                </svg>
+                CALL US
+            </a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 Big Solutions Corporation</p>
+        <p style="font-size: 0.75em; margin-top: 0.5em;">Created by: Carlos Villa</p>
+    </footer>    
+</body>
+</html>
